@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import UpperPart from './components/UpperPart/UpperPart'
+import AboutMe from './components/UpperPart/AboutMe'
+import  CircleElementsGroup from './components/UpperPart/CircleElementsGroup'
+import  LowerPart from './components/LowerPart/LowerPart'
+import InfoSection from './components/LowerPart/InfoSection'
+
+import './styles/index.scss'
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <UpperPart/> 
+      <LowerPart>
+        <InfoSection></InfoSection>
+        <InfoSection></InfoSection>
+        <InfoSection></InfoSection>
+      </LowerPart>
     </div>
   );
 }
 
 export default App;
+

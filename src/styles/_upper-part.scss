@@ -1,0 +1,32 @@
+.upper-part{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+    overflow: hidden;
+    background-color: rgb(20, 33, 56);
+}
+.circle-elements.left{
+    position: absolute;
+
+}
+.circle-elements.right{position: absolute;}
+.circle-elements.right {
+    // fill: yellowgreen;
+    
+    // filter: url('#inset-shadow');
+    filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+}
+
+.rotate-forward{animation: rotation-forward 240s infinite linear}
+.rotate-backward{animation: rotation-backward 240s infinite linear}
+@keyframes  rotation-forward {
+    from { transform: rotate(0deg);}
+    to { transform: rotate(359deg);}
+}
+@keyframes  rotation-backward {
+    from {transform: rotate(0);}
+    to {transform: rotate(-359deg);}
+}
