@@ -1,9 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&display=swap');
 .App{
-    // width:100vw;
-    height: 100vh;
-    // overflow: hidden;
-    display: flex;
-    flex-direction: column;
+  width:100vw;
+  height: 100vh;
+  // overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  // font-size: 1.8em;
+  // font-family: 'Roboto Flex', sans-serif;
+  background-color: transparent;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+  background-color:rgba(20, 33, 56, .96) ;
 }
 
 /* Box sizing rules */

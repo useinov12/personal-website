@@ -1,5 +1,32 @@
 .lower-part{
-    height: 100%;
+
+    z-index: 100;
+    height: 50%;
     width: 100%;
-    background-color: blue;
+    overflow: hidden;
+    border-radius: 40% 40% 0 0;
+    border-top: 1px solid white;
+    background-color: rgba(29,30,32, 1);
+    display: flex;
+    justify-content: space-around;
+    // align-items: center;
+    padding:  5rem;
+
+}
+
+.info-section{
+    max-width: 300px;
+    color:white;
+    position: relative;
+}
+
+.fragment-open{
+    position: absolute;
+    top:0;
+    left:-4rem;
+}
+.fragment-close{
+    position: absolute;
+    bottom: -2rem;
+    right:0;
 }
