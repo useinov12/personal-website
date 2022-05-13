@@ -5,7 +5,6 @@ function RightCircleGroup() {
     const windowSize  = useWindowSize()
     const [size, setSize ] = useState(0)
     useEffect(() => {
-        console.log(size, windowSize.width)
         if(windowSize.width <340 )return setSize(300)
         if(windowSize.width <450 )return setSize(350)
         if(windowSize.width <600 )return setSize(450)
@@ -20,7 +19,7 @@ function RightCircleGroup() {
 
 
     return (
-        <svg  className={`circle-elements right  `}   
+        <svg  className={`circle-elements right  rotate-forward`}   
         // <svg  className={`circle-elements right  rotate-forward`}  
             width={`${size}px`} height={`${size}px`}
             style={{top:`-${size/2}px`, right:`-${size/2}px`}}

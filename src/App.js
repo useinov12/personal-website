@@ -5,6 +5,11 @@ import AboutMe from './components/UpperPart/AboutMe'
 import  LowerPart from './components/LowerPart/LowerPart'
 import InfoSection from './components/LowerPart/InfoSection'
 
+
+import { SiJavascript, SiTypescript } from 'react-icons/si';
+import { FaReact } from 'react-icons/fa';
+
+
 import './styles/index.scss'
 
 function App() {
@@ -22,8 +27,23 @@ function App() {
             Exploring data visualization.
             </p>
           </InfoSection>
-          <InfoSection topic={'My Stack'}>
-          
+          <InfoSection topic={'My Tech Stack'}>
+            <h2>Languages</h2>
+            <section>
+              <div>Javascript <SiJavascript/> </div>
+              <div>Typescript <SiTypescript/> </div>
+            </section>
+            <h2>Frameworks & Liabriaries</h2>
+            <section>
+              <div>React <FaReact/> </div>
+              <div>Next.JS  </div>
+              <div>D3.JS  </div>
+            </section>
+            <h2>Databases</h2>
+            <section>
+              <div>MySQL</div>
+              <div>MongoDB</div>
+            </section>
           </InfoSection>
           <InfoSection topic={'My Projects'}></InfoSection>
         </LowerPart>
@@ -34,15 +54,3 @@ function App() {
 }
 
 export default App;
-
-// <LowerPart>
-// <InfoSection topic={'About Me'}>
-
-// </InfoSection>
-// <InfoSection topic={'My Stack'}>
-
-// </InfoSection>
-// <InfoSection topic={'My Projects'}>
-
-// </InfoSection>
-// </LowerPart>

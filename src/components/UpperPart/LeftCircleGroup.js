@@ -20,7 +20,7 @@ function LeftCircleGroup() {
 
 
     return (
-        <svg className={`circle-elements left`}  
+        <svg className={`circle-elements left rotate-backward`}  
             // <svg className={`circle-elements left rotate-backward`}  
             width={`${size}px`} height={`${size}px`}
             style={{top:`-${size/2}px`, left:`-${size/2}px`}}

@@ -19,7 +19,7 @@ function InfoSection({topic, children}) {
         <div className='info-section'>
             {fragmentOpen} 
             <h1>{topic}</h1>
-                {children}
+            {children}
             {fragmentClose}
         </div>
     )
