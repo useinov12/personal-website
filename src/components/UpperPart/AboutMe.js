@@ -1,53 +1,42 @@
-import React, { useState, useEffect } from 'react'
-import { FaGithub } from 'react-icons/fa';
-import { FaLinkedin } from 'react-icons/fa';
+import React, { useState } from 'react'
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { SiGmail } from 'react-icons/si';
-
-
-
-
-
-
-
+import ContactForm from '../Contact/index'
 
 function AboutMe() {
-    const [position, setPosition ] = useState(0)
-    const styles = { transform:`translateY(-${position}px)`}
+    const [contactFormIsOpen, setContactFormIsOpen ] = useState(false)
 
-    useEffect(() => {
-        let timerId
-        if(position >= 108) timerId = setInterval( ()=>setPosition(0), 1000);
-        else timerId = setInterval( ()=>setPosition(p => p+36), 1000);
-        return ()=>  clearInterval(timerId)
-    }, [position])
-
-
+    const handleCloseForm = ( ) => { setContactFormIsOpen(p=>!p)}
     return (
         <div className='about-me-info'>
-
-        
-            <div className='img-container'>
-                <img/>
-            </div>
             <div>Ruslan</div>
-
             <b className='porfessional-info slide-vertical'>
-                <span style={styles}>
+                {<span className='rotation-container'>
                     <div>Web Developement</div>
                     <div>Data Visualization</div>
                     <div>Front-End</div>
                     <div>UI Design</div>
-                </span>
+                </span>}
             </b>
 
             <div className='contact-info-container'>
-                <b>Contacts</b>
-                <div>
-                    <FaGithub/>
-                    <FaLinkedin/>
-                    <SiGmail/>
+                <h3>Contacts</h3>
+                <div className='social-links'>
+                    <a href='https://www.linkedin.com/in/ruslan-useinov-330b5a23a/' target="_blank" className='contact-link'>
+                        <FaLinkedin className='contacts-icon'/>
+                    </a>
+                    <a href='https://github.com/ruslaaaan' target="_blank" className='contact-link'>
+                        <FaGithub className='contacts-icon'/>
+                    </a>
+                    <a onClick={()=>setContactFormIsOpen(!contactFormIsOpen)} className='contact-link'>
+                        <SiGmail className='contacts-icon'/>
+                    </a>
                 </div>
             </div>
+            <ContactForm 
+                handleCloseForm={handleCloseForm} 
+                contactFormIsOpen={contactFormIsOpen}
+            />
         </div>
     )
 }

@@ -7,108 +7,96 @@
     align-items: center;
     position: relative;
     border-radius: 0 0 -15% -15% ;
-    // overflow: hidden;
-    // background-color: rgba(20, 33, 56, .96);
-    // border-bottom: 1px solid rgba(250, 250, 250, 0.9);
+    box-shadow: inset 5px 5px 45px rgba(20, 33, 56, .96),
+    inset 5px 5px 45px rgba(4, 6, 8, 0.66);
 }
-.circle-elements{
-    // filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
-}
-
 .circle-elements.left{
     position: absolute;
     z-index: 0;
     filter: url('#inset-shadow');
-    // filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
 }
 .circle-elements.right {
     position: absolute;
     z-index: 0;
     filter: url('#inset-shadow');
-    // filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
 }
-
-.rotate-forward{
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
-    -ms-transform: translateZ(0);
-    will-change: transform;
-    animation: rotation-forward 300s infinite linear
-}
-.rotate-backward{
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
-    -ms-transform: translateZ(0);
-    will-change: transform;
-    animation: rotation-backward 300s infinite linear
-}
-@keyframes  rotation-forward {
-    // from { transform: rotate(0deg);}
-    // to { transform: rotate(359deg);}
-}
-@keyframes  rotation-backward {
-    // from {transform: rotate(0);}
-    // to {transform: rotate(-359deg);}
-}
-
-
 .about-me-info{
-    // background-color: teal;
     height: 50%;
-    margin-top: 1rem;
-    padding-bottom:1rem;
     color:white;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    font-size: 1.5rem;
-    .img-container{
-        width:10rem;
-        height: 10rem;
-        border-radius: 50%;
-        z-index: 10;
-        background-color: rgba(80, 211, 138);
-        box-shadow: inset 1px 3px 5px rgba(20, 33, 56, .96),
-        inset 3px 3px 3px rgba(20, 33, 56, .26);
-        img {}
-    }
 }
 
 b.porfessional-info{
     overflow: hidden;
     position: relative;
-    margin: 0 1rem 1rem;
-    height: 2rem;
-    span {
+    margin: 0 1rem;
+    height: 2.2rem;
+    .rotation-container {
+        font-size: 1.5rem;
         display: inline-block;
         text-align: center;
+        align-items: center;
         transition: .5s ease-in-out;
         white-space: nowrap;
         transform: translateZ(0);
+        transform: translate3d(100);
         -webkit-transform: translateZ(0);
         -ms-transform: translateZ(0);
         will-change: transform;
+        animation-delay: 3s;
+        animation-duration: 3s;
+        animation: move 4.5s infinite ease;
     }
+}
+
+@keyframes move {
+    0%{transform: translateY(0px);}
+    20%{transform: translateY(-2.2rem);}
+    40%{transform: translateY(-4.4rem);}
+    60%{transform: translateY(-6.6rem);}
+    80%{transform: translateY(-6.6rem);}
+    90%{transform: translateY(0px);}
 }
 
 .contact-info-container{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: 0 1rem;
-    b{
-        display: flex;
-        justify-content: center;
-    }
-    div{
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1rem;
+    .social-links{
         width:9rem;
         display: flex;
         justify-content: space-around;
         align-items: center;
-        font-size: 2.3rem;
-        &>*{transition: .1s;}
-        &>*:hover{cursor: pointer; color: #e74c3c;}
     }
-
 }
+
+.contact-link{ text-decoration: none;  background-color: none;}
+.contacts-icon{
+    font-size: 2.5rem;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -ms-transition:all .1s ease-in-out;
+    -o-transition:all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    transition-delay: 10ms;
+    cursor: pointer;
+    transform: translateZ(0);
+    transform: translate3d(100);
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    will-change: transform, -moz-transform;
+    color:white;
+}
+
+.contacts-icon:hover{
+    color: #e74c3c;
+    transform: scale(1.3);
+    -moz-transform:scale(1.3);
+    border-bottom: 5px solid #e74c3c;
+}
+

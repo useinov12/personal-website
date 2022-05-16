@@ -14,13 +14,13 @@ const fragmentClose = (
         <path d="M53.293 16.8285C53.6688 15.9411 54.6976 15.515 55.5908 15.8768C56.4841 16.2387 56.9035 17.2515 56.5277 18.1389L47.3339 39.8468C46.958 40.7342 45.9292 41.1603 45.036 40.7984C44.1428 40.4366 43.7234 39.4238 44.0992 38.5364L53.293 16.8285Z" fill="white"/>
     </svg>
 )
-function InfoSection({topic, children}) {
+function InfoSection({className, topic, children}) {
     return (
-        <div className='info-section'>
-            {fragmentOpen} 
+        <div className={className}>
+            {/* fragmentOpen */} 
             <h1>{topic}</h1>
             {children}
-            {fragmentClose}
+            {/* fragmentClose */}
         </div>
     )
 }

@@ -12,15 +12,15 @@ function RightCircleGroup() {
         if(windowSize.width < 1100 )return setSize(700)
         if(windowSize.width < 1300 )return setSize(900)
         if(windowSize.width < 1700 )return setSize(1000)
-        if(windowSize.width > 1700 )return setSize(1300)
+        if(windowSize.width < 2400 )return setSize(1300)
+        if(windowSize.width > 3000 )return setSize(2200)
 
         setSize(windowSize.width)
     }, [windowSize])
 
 
     return (
-        <svg  className={`circle-elements right  rotate-forward`}   
-        // <svg  className={`circle-elements right  rotate-forward`}  
+        <svg  className={`circle-elements right`}   
             width={`${size}px`} height={`${size}px`}
             style={{top:`-${size/2}px`, right:`-${size/2}px`}}
             viewBox={`180 120 750 800`} 

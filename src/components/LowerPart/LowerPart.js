@@ -1,8 +1,8 @@
 import React from 'react'
 
-function LowerPart({children}) {
+function LowerPart({children, className }) {
     return (
-        <div className='lower-part'>
+        <div className={className}>
             {children}
         </div>
     )
