@@ -2,8 +2,9 @@
   width:100vw;
   height: 100vh;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
   background-color: transparent;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -18,10 +19,10 @@
   body{ font-size: 1.2rem; }
 }
 @media only screen and (min-width:1600px){
-  body{ font-size: 2.3em; }
+  body{ font-size: 1.6em; }
 }
 @media only screen and (min-width:2200px){
-  body{ font-size: 3.5rem; }
+  body{ font-size: 2.5rem; }
 }
 
 body{

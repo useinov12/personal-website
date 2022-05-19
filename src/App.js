@@ -8,31 +8,21 @@ import InfoSection from './components/LowerPart/InfoSection'
 import { SiJavascript, SiTypescript } from 'react-icons/si';
 import { FaReact } from 'react-icons/fa';
 import { DiPostgresql, DiMongodb } from 'react-icons/di';
-
-
-
 import useWindowSize from './components/useWindowSize'
-
 import './styles/index.scss'
 
 function App() {
   const windowSize  = useWindowSize()
   const [ screenSize, setScreenSize ] =  useState(0)
-
+  const [currentTopic, setCurrentTopic] = useState('projects')
 
   useEffect(() => {
     setScreenSize(windowSize.width)
-
   }, [windowSize])
 
-  const [currentTopic, setCurrentTopic] = useState('About Me')
-
-
-
-
   const renderTopic = (topic) => {
-
-    if(!topic) return (<>
+    if(!topic) return ( 
+      <>
         <InfoSection className={screenSize <= 900 ?  'info-section small-screen' : 'info-section big-screen'} topic={'About Me'}>
           <p>
             I'm a self-thaught programmer from financial background. 
@@ -41,33 +31,31 @@ function App() {
           </p>
         </InfoSection>
 
-      <InfoSection className={screenSize <= 900 ?  'info-section small-screen' : 'info-section big-screen'}  topic={'Tech Stack'}>
-        <div>
-          <h2>Languages</h2>
+        <InfoSection className={screenSize <= 900 ?  'info-section small-screen' : 'info-section big-screen'}  topic={'Tech Stack'}>
+          <h4>Languages</h4>
           <section>
-            <div>Javascript <SiJavascript className='stack-icons'/> </div>
-            <div>Typescript <SiTypescript className='stack-icons'/> </div>
-          </section>
+              <span className='section-item'>Javascript <SiJavascript className='stack-icons'/> </span>
+              <span className='section-item'>Typescript <SiTypescript className='stack-icons'/> </span>
+            </section>
 
-          <h2>Frameworks & Liabriaries</h2>
-          <section>
-            <div>React <FaReact className='stack-icons'/> </div>
-            <div>Next.JS  </div>
-            <div>D3.JS  </div>
-          </section>
+            <h4>Frameworks & Liabriaries</h4>
+            <section>
+              <span  className='section-item'>React <FaReact className='stack-icons'/> </span>
+              <span className='section-item'>Next.JS  </span>
+              <span className='section-item'>D3.JS  </span>
+            </section>
 
-          <h2>Databases</h2>
-          <section>
-            <div> SQL <DiPostgresql className='stack-icons'/> </div>
-            <div>MongoDB <DiMongodb className='stack-icons'/> </div>
-          </section> 
-        </div>
-      </InfoSection>
+            <h4>Databases</h4>
+            <section>
+              <span className='section-item'> SQL <DiPostgresql className='stack-icons'/> </span>
+              <span className='section-item'>MongoDB <DiMongodb className='stack-icons'/> </span>
+            </section> 
+        </InfoSection>
 
         <InfoSection className={screenSize <= 900 ?  'info-section small-screen' : 'info-section big-screen'}  topic={'Projects'}>
-          <a>Algo-visialization</a>
+          <a href='https://algo-visualization.com/' target="_blank"> Algo-visialization </a>
         </InfoSection>
-      </>)
+      </>);
     if(topic === 'about') return (
       <InfoSection className={screenSize <= 900 ?  'info-section small-screen' : 'info-section big-screen'} topic={'About Me'}>
         <p>
@@ -79,35 +67,32 @@ function App() {
     )
     if(topic === 'stack') return ( 
       <InfoSection className={screenSize <= 900 ?  'info-section small-screen' : 'info-section big-screen'}  topic={'Tech Stack'}>
-        <div>
-          <h2>Languages</h2>
+          <h3>Languages</h3>
           <section>
-            <div>Javascript <SiJavascript className='stack-icons'/> </div>
-            <div>Typescript <SiTypescript className='stack-icons'/> </div>
+            <div className='section-item'>Javascript <SiJavascript className='stack-icons'/> </div>
+            <div className='section-item'>Typescript <SiTypescript className='stack-icons'/> </div>
           </section>
 
-          <h2>Frameworks & Liabriaries</h2>
+          <h3>Frameworks & Liabriaries</h3>
           <section>
-            <div>React <FaReact className='stack-icons'/> </div>
-            <div>Next.JS  </div>
-            <div>D3.JS  </div>
+            <div className='section-item'>React <FaReact className='stack-icons'/> </div>
+            <div className='section-item'>Next.JS  </div>
+            <div className='section-item'>D3.JS  </div>
           </section>
 
-          <h2>Databases</h2>
+          <h3>Databases</h3>
           <section>
-            <div> SQL <DiPostgresql className='stack-icons'/> </div>
-            <div>MongoDB <DiMongodb className='stack-icons'/> </div>
+            <div className='section-item'> SQL <DiPostgresql className='stack-icons'/> </div>
+            <div className='section-item'>MongoDB <DiMongodb className='stack-icons'/> </div>
           </section> 
-        </div>
       </InfoSection>
     )
     if(topic === 'projects') return (
       <InfoSection className={screenSize <= 900 ?  'info-section small-screen' : 'info-section big-screen'}  topic={'Projects'}>
-        <a>Algo-visialization</a>
+        <a href='https://algo-visualization.com/' target="_blank"> Algo-visialization </a>
       </InfoSection>
     )
   }
-
 
   return (
     <div className="App">
@@ -115,61 +100,20 @@ function App() {
         <LeftGroup/>
         <RightGroup/>
         <AboutMe />
-
-
-
         <LowerPart className={screenSize <= 900 ? 'lower-part small-screen' : 'lower-part big-screen'}>
-          {screenSize <=900  && (
+          { screenSize <=900  && (
             <nav className='small-screens-nav'>
-              <button onClick={()=>setCurrentTopic('about')}>About Me</button>
-              <button onClick={()=>setCurrentTopic('stack')}>Tech Stack</button>
-              <button onCLick={()=>setCurrentTopic('projects')}>My Projects</button>
+              <button className={currentTopic === 'about' ? 'current' : ''} onClick={()=>setCurrentTopic('about')}>About Me</button>
+              <button className={currentTopic === 'stack' ? 'current' : ''} onClick={()=>setCurrentTopic('stack')}>Tech Stack</button>
+              <button className={currentTopic === 'projects' ? 'current' : ''} onClick={()=>setCurrentTopic('projects')}>My Projects</button>
             </nav>
           )}
           { screenSize <=900 &&  renderTopic(currentTopic) }
           { screenSize > 900 && renderTopic() }
         </LowerPart>
-
       </UpperPart> 
     </div>
   );
 }
 
 export default App;
-
-
-
-// <InfoSection topic={'About Me'}>
-// <p>I'm a self-thaught programmer from financial background. 
-// Passionate about tech and web. 
-// Exploring data visualization.
-// </p>
-// </InfoSection>
-
-// <InfoSection topic={'My Tech Stack'}>
-
-// <h2>Languages</h2>
-// <section>
-//   <div>Javascript <SiJavascript/> </div>
-//   <div>Typescript <SiTypescript/> </div>
-// </section>
-
-// <h2>Frameworks & Liabriaries</h2>
-// <section>
-//   <div>React <FaReact/> </div>
-//   <div>Next.JS  </div>
-//   <div>D3.JS  </div>
-// </section>
-
-// <h2>Databases</h2>
-// <section>
-//   <div>MySQL</div>
-//   <div>MongoDB</div>
-// </section>
-
-// </InfoSection>
-
-
-// <InfoSection topic={'My Projects'}>
-// <a >Algo-visialization</a>
-// </InfoSection>

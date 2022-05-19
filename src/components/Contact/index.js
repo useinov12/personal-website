@@ -40,7 +40,6 @@ export default function ContactForm({contactFormIsOpen, handleCloseForm}) {
             })
     }
 
-
     //Fade-in animation
     useEffect(() => {
         let timer 
