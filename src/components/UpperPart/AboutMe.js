@@ -11,12 +11,12 @@ function AboutMe() {
         <div className='about-me-info'>
             <div>Ruslan</div>
             <b className='porfessional-info slide-vertical'>
-                {<span className='rotation-container'>
+                {/* <span className='rotation-container'>
                     <div>Web Developement</div>
                     <div>Data Visualization</div>
                     <div>Front-End</div>
                     <div>UI Design</div>
-                </span>}
+                </span> */}
             </b>
 
             <div className='contact-info-container'>

@@ -26,7 +26,7 @@ function App() {
         <InfoSection className={screenSize <= 900 ?  'info-section small-screen' : 'info-section big-screen'} topic={'About Me'}>
           <p>
             I'm a self-thaught programmer from financial background. 
-            Passionate about tech and web. 
+            Passionate about building software  
             Exploring data visualization.
           </p>
         </InfoSection>
